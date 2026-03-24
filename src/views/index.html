@@ -65,15 +65,27 @@
     const nome = document.getElementById('nome').value;
     const preco = document.getElementById('preco').value;
     
-    try {
-      
+      try {
+        const response = await fetch('/api/produtos',{
+          method: "POST",
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({nome, preco})
+        });
 
+        if (response.ok){
+          alert('Produto criado com sucesso!');
+          document.getElementById('createForm').reset();
+          loadProucts();
 
-    } catch (error) {
-
-      
-      
-    }
+        } else {
+          alert('Erro ao criar produto.');
+        }
+      } catch (error) {
+        alert('Erro de comunicação com o servidor.');
+        
+        
+        
+      }
     
 
 
@@ -83,7 +95,16 @@
     })
     
 
+    document.getElementById('fetchProductsBtn')
+    .addEventListener('click', loadProucts);
 
+    async function loadProucts(){
+      
+      const response = await fetch('api/produtos');
+      const produtos = await response.json();
+      const tbody = document.getElementById('produtosTableBody');
+      tbody.innerHTML = "";
+    }
 
 
 
