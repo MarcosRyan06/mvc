@@ -1,0 +1,20 @@
+19/03/2026
+
+
+1º criar o banco de dados
+2º rodar o servidor -    npx ts-node src/app.ts
+3º criar a rota do delete
+
+
+23/03/2026
+
+1º Criar o repostório no card_giftcard
+   
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin        .git
+git push -u origin main
+
+.gitignore  para ignorar o que vai para o git
