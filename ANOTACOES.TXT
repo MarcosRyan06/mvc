@@ -21,3 +21,12 @@ git push -u origin main
 //
 //
 //
+
+30/03
+post -> enviando dados rota
+put -> alterando        rota + id
+
+rota, metodo, body, headers
+-------------------------------------
+get           rota
+delete        rota + i
